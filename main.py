@@ -226,13 +226,13 @@ def callback_inline(call):
             country = call.data.split(' ')[0]
             if country not in user_chosen_countries[call.message.chat.id] and call.message.chat.id not in in_game:
                 user_chosen_countries[call.message.chat.id] = user_chosen_countries[call.message.chat.id] + [call.data.split(' ')[0]]
-                bot.send_message(call.message.chat.id, 'Города из {0} добавлены!'.format(call.data.split(' ')[1]), reply_markup=markup)
-                print(user_chosen_countries[call.message.chat.id])
+                bot.send_message(call.message.chat.id, 'Города из {0} добавлены! (+{1})'.format(call.data.split(' ')[1], len(config.all_domains[call.data.split(' ')[0]])), reply_markup=markup)
+                # print(user_chosen_countries[call.message.chat.id])
             
             elif country in user_chosen_countries[call.message.chat.id] and call.message.chat.id not in in_game:
                 user_chosen_countries[call.message.chat.id].remove(country)
-                bot.send_message(call.message.chat.id, 'Города из {0} убраны'.format(call.data.split(' ')[1]), reply_markup=markup)
-                print(user_chosen_countries[call.message.chat.id])
+                bot.send_message(call.message.chat.id, 'Города из {0} убраны (-{1})'.format(call.data.split(' ')[1], len(config.all_domains[call.data.split(' ')[0]])), reply_markup=markup)
+                # print(user_chosen_countries[call.message.chat.id])
             
     except Exception as e:
         print(repr(e))
