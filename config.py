@@ -1,4 +1,5 @@
-TOKEN = '5854183896:AAFfe-42ZDN9qzynY2xX8dx4nPupXs5eNHo'
+# Токен от телеграм бота
+TOKEN = ''
 
 countries = ['RU 🇷🇺', 'UA 🇺🇦', 'BY 🇧🇾', 'KZ 🇰🇿', 'FR 🇫🇷', 'GB 🇬🇧', 'NL 🇳🇱', 'US 🇺🇸']
 
